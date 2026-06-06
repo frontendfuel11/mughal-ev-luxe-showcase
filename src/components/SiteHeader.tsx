@@ -4,9 +4,16 @@ import { supabase } from "@/integrations/supabase/client";
 
 export function SiteHeader() {
   const [authed, setAuthed] = useState(false);
+  const [email, setEmail] = useState<string | null>(null);
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setAuthed(!!data.session));
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => setAuthed(!!session));
+    supabase.auth.getSession().then(({ data }) => {
+      setAuthed(!!data.session);
+      setEmail(data.session?.user?.email ?? null);
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      setAuthed(!!session);
+      setEmail(session?.user?.email ?? null);
+    });
     return () => sub.subscription.unsubscribe();
   }, []);
 
@@ -26,12 +33,22 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-3">
           {authed ? (
-            <button
+            <>
+              {email && (
+                <span
+                  title={email}
+                  className="hidden sm:inline max-w-[200px] truncate text-[12px] tracking-[0.05em] text-foreground/70 border border-border/60 rounded-full px-3 py-1"
+                >
+                  {email}
+                </span>
+              )}
+              <button
               onClick={async () => { await supabase.auth.signOut(); }}
               className="text-[12px] uppercase tracking-[0.18em] text-foreground/60 hover:text-foreground transition"
             >
               Sign Out
-            </button>
+              </button>
+            </>
           ) : (
             <>
               <Link to="/auth" search={{ mode: "signin" } as any} className="text-[12px] uppercase tracking-[0.18em] text-foreground/60 hover:text-foreground transition">
