@@ -4,6 +4,33 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Premium typography — Sarona Gothela substitute (display) + Grister Grisk substitute (sans) */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap');
+
+@keyframes marquee {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-50%,0,0); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translate3d(0,12px,0); }
+  100% { opacity: 1; transform: translate3d(0,0,0); }
+}
+.animate-fade-up { animation: fade-up 0.7s ease-out both; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.text-display { font-family: 'Bodoni Moda', 'Sarona Gothela', Georgia, serif; letter-spacing: -0.02em; }
+.text-ui { font-family: 'Inter Tight', 'Grister Grisk', system-ui, -apple-system, sans-serif; }
+
 /*
  * Design system definition.
  *
