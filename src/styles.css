@@ -3,8 +3,21 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Grift';
+  src: url('/src/assets/fonts/Grift-light.ttf') format('truetype'),
+  url('/src/assets/fonts/Grift-medium.ttf') format('truetype');
+  font-weight: 300 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Grister Grisk';
+  src: url('/src/assets/fonts/soruna-gothela.otf') format('opentype'),;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @custom-variant dark (&:is(.dark *));
