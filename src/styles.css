@@ -3,21 +3,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-@font-face {
-  font-family: 'Grift';
-  src: url('/src/assets/fonts/Grift-light.ttf') format('truetype'),
-  url('/src/assets/fonts/Grift-medium.ttf') format('truetype');
-  font-weight: 300 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Soruna Gothela';
-  src: url('/src/assets/fonts/soruna-gothela.otf') format('opentype'),;
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+@layer{
+  @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Monoton&display=swap');
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -46,8 +33,8 @@
   100% { background-position: 200% 0; }
 }
 
-.text-display { font-family: 'Soruna Gothela'; letter-spacing: 0; }
-.text-ui { font-family: 'Grift',sans-serif; }
+.text-display { font-family: 'Monoton' , sans-serif; letter-spacing: 0; }
+.text-ui { font-family: 'Elms Sans',sans-serif; }
 
 /*
  * Design system definition.
