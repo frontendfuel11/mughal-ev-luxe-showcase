@@ -46,8 +46,8 @@
   100% { background-position: 200% 0; }
 }
 
-.text-display { font-family: 'Bodoni Moda', 'Sarona Gothela', Georgia, serif; letter-spacing: -0.02em; }
-.text-ui { font-family: 'Inter Tight', 'Grister Grisk', system-ui, -apple-system, sans-serif; }
+.text-display { font-family: 'Soruna Gothela'; letter-spacing: -0.02em; }
+.text-ui { font-family: 'Grift',sans-serif; }
 
 /*
  * Design system definition.
