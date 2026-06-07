@@ -1,0 +1,1 @@
+import{s as a}from"./index-D8fTBJc5.js";async function c(){const{data:t,error:r}=await a.from("products").select("*").order("created_at",{ascending:!1});if(r)throw r;return t??[]}async function s(t){const{data:r,error:e}=await a.from("products").select("*").eq("id",t).maybeSingle();if(e)throw e;return r}export{s as fetchProduct,c as fetchProducts};

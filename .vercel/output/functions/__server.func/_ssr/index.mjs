@@ -53,7 +53,7 @@ function renderErrorPage() {
 let serverEntryPromise;
 async function getServerEntry() {
   if (!serverEntryPromise) {
-    serverEntryPromise = import("./server-BPcoE4GY.mjs").then((n) => n.aa).then(
+    serverEntryPromise = import("./server-BbbEn4Om.mjs").then((n) => n.s).then(
       (m) => m.default ?? m
     );
   }
@@ -63,7 +63,6 @@ async function normalizeCatastrophicSsrResponse(response) {
   if (response.status < 500) return response;
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) return response;
-  console.error("FULL SSR ERROR BODY:", body);
   const body = await response.clone().text();
   if (!body.includes('"unhandled":true') || !body.includes('"message":"HTTPError"')) {
     return response;
