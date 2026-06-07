@@ -94,7 +94,7 @@ Mughal<span className="text-accent">·</span>EV </Link>
           {email && (
             <span
               title={email}
-              className="hidden sm:inline max-w-[220px] truncate text-[12px] tracking-[0.05em] text-foreground/70 border border-border/60 rounded-full px-3 py-1"
+              className="hidden sm:inline max-w-[220px] truncate text-[12px] tracking-[0.05em] text-foreground border border-border/60 rounded-full px-3 py-1"
             >
               {email}
             </span>

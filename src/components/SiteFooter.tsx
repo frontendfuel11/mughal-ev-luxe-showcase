@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div>
           <div className="uppercase tracking-[0.2em] text-xs text-foreground/80 mb-3">Rabta — Contact</div>
           <p>Showroom · Lahore, Pakistan</p>
-          <p>info@mughalev.pk</p>
+          <p>mughalevtech@gmail.com</p>
         </div>
         <div className="md:text-right text-xs uppercase tracking-[0.2em]">
           © {new Date().getFullYear()} Mughal EV Tech
