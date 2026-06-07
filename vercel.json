@@ -1,5 +1,27 @@
 {
      "buildCommand": "npm run build",
      "installCommand": "npm install --legacy-peer-deps",
-     "outputDirectory": ".vercel/output"
+     "outputDirectory": ".vercel/output",
+     "routes": [
+      {
+        "src": "/favicon.ico",
+        "dest": "/favicon.ico"
+      },
+      {
+        "src": "/favicon.png",
+        "dest": "/favicon.png"
+      },
+      {
+        "src": "/assets/(.*)",
+        "dest": "/assets/$1"
+      },
+      {
+        "src": "/fonts/(.*)",
+        "dest": "/fonts/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/__server"
+      }
+    ]
    }
